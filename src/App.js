@@ -1,5 +1,6 @@
 import './App.css';
 import AddCase from './components/AddCase/AddCase';
+import Home from './components/Home';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
           <div className="navbar-brand nav-brand" href="#">VISTAPATH CASE LIST</div>
         </nav>
         <AddCase></AddCase>
+        <Home></Home>
       </div>
     </div>
   );

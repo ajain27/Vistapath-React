@@ -1,0 +1,25 @@
+.individual-card {
+    margin-top: 45px;
+    background: white !important;
+  }
+
+  .case-detail-ul {
+    list-style: none;
+    background: #F8F8F8;
+    height: 600px;
+    overflow-y: scroll;
+    margin: 0;
+  }
+  .case {
+    margin: 25px;
+  }
+  .case-detail {
+    position: relative;
+    top: 15px;
+    height: 285px;
+  }
+
+  .row-item {
+      background-color: white !important;
+      border-radius: 7px !important;
+  }
