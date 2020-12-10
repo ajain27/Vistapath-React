@@ -23,7 +23,6 @@ function AddCase() {
 
     const validate = () => {
         let err = {}
-        console.log(form);
         if (!form.name) {
             err.name = "Case name is required"
         }
@@ -80,7 +79,6 @@ function AddCase() {
         } else {
             showError(errors)
         }
-
     }
 
 
@@ -127,7 +125,7 @@ function AddCase() {
                                     id='uploadImage'
                                     name='image'
                                     value={form.image}
-                                    // onChange={handleChange}
+                                    onChange={handleChange}
                                     aria-describedby='uploadFile' />
                                 <label className='custom-file-label' htmlFor='uploadImage'>Choose image</label>
                             </div>
