@@ -2,22 +2,10 @@
   "cases": [
     {
       "id": "1",
-      "name": "Case name 1",
-      "notes": "Case notes 1",
+      "name": "Eliminate mix-ups and errors",
+      "notes": "The Sentinel ensures errors don’t occur in your laboratory’s process. Cassette and container mismatch?  The Sentinel is constantly reading all labeling and will lock out and notify the user if a mismatch occurs. Tissue left in the container?  The Sentinel monitors all tissue before, during and after transfer from the container to the cassette ensuring no tissue is lost or left behind.",
       "image": "1",
       "imageNotes": "image notes 1"
-    },
-    {
-      "name": "Case 2",
-      "notes": "Case 2notes",
-      "imageNotes": "Image 2 notes",
-      "id": "WVFLX_G"
-    },
-    {
-      "name": "Case 3",
-      "notes": "Case 3 notes",
-      "imageNotes": "image notes 3",
-      "id": "K3cMFBq"
     }
   ]
 }

@@ -1,5 +1,5 @@
 import './App.css';
-import AddCase from './components/AddCase/AddCase';
+import AddCase from './components/AddCase';
 import Home from './components/Home';
 
 function App() {

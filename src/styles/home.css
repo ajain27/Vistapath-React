@@ -16,10 +16,17 @@
   .case-detail {
     position: relative;
     top: 15px;
-    height: 285px;
   }
 
   .row-item {
       background-color: white !important;
       border-radius: 7px !important;
+  }
+
+  .showDetailsBtn {
+    color: white !important;
+    background-color: #dc5b28 !important;
+    position: relative;
+    right: 15px;
+    bottom: 20px;
   }

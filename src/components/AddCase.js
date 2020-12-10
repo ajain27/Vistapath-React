@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal'
-import '../../styles/addCase.css'
+import '../styles/addCase.css'
 import { v4 as uuidv4 } from 'uuid';
 
 Modal.setAppElement('#root');
@@ -29,6 +29,10 @@ function AddCase() {
         })
     }
 
+    const handleCloseModal = () => {
+        setisModalOpen(false);
+    }
+
     const postFormData = async(data) => {
         await fetch(url, {
             method: 'POST',
@@ -36,6 +40,7 @@ function AddCase() {
             body: JSON.stringify(data.form)            
         })
         console.log('post form data --', data.form);
+        handleCloseModal();
     }
 
     const handleOnSubmit = async (e) => {
