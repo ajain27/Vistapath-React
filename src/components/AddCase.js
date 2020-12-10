@@ -31,6 +31,11 @@ function AddCase() {
 
     const handleCloseModal = () => {
         setisModalOpen(false);
+        reloadPage();
+    }
+
+    const reloadPage = ()=> {
+        window.location.reload();
     }
 
     const postFormData = async(data) => {
