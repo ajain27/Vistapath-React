@@ -49,6 +49,7 @@ function Home() {
                                                 <h4>{cases.name}</h4>
                                                 <div className="summary">
                                                     <p>{cases.notes}</p>
+                                                    <p><strong>Image Notes:</strong> :{cases.imageNotes}</p>
                                                 </div>
                                             </div>
                                             <div className='col-sm-12 d-flex p-0'>

@@ -8,18 +8,41 @@ function AddCase() {
 
     const [isModalOpen, setisModalOpen] = useState(false);
     const [cases, setCases] = useState(null);
-    const [form, setForm] = useState({ name: '', notes: '', imageNotes: ''});
+    const [form, setForm] = useState({ name: '', notes: '', imageNotes: '' });
 
     const url = '/cases';
-    useEffect(()=> {
+    useEffect(() => {
         fetchCases();
     }, [])
 
-    const fetchCases = async() => {
+    const fetchCases = async () => {
         const res = await fetch(url);
         const data = await res.json();
-        console.log('fetch cases --', data);
         setCases(data);
+    }
+
+    const validate = () => {
+        let err = {}
+        console.log(form);
+        if (!form.name) {
+            err.name = "Case name is required"
+        }
+        if (!form.notes) {
+            err.notes = "Case notes is required"
+        }
+        if (!form.imageNotes) {
+            err.imageNotes = "Image notes is required"
+        }
+
+        return err;
+    }
+
+    const showError = (errorObj) => {
+        let errorMsg = '';
+        for (let err in errorObj) {
+            errorMsg += `${errorObj[err]} \n `
+        }
+        alert(`${errorMsg}`)
     }
 
     function handleChange(e) {
@@ -34,26 +57,30 @@ function AddCase() {
         reloadPage();
     }
 
-    const reloadPage = ()=> {
+    const reloadPage = () => {
         window.location.reload();
     }
 
-    const postFormData = async(data) => {
+    const postFormData = async (data) => {
         await fetch(url, {
             method: 'POST',
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, 
-            body: JSON.stringify(data.form)            
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify(data.form)
         })
-        console.log('post form data --', data.form);
         handleCloseModal();
     }
 
     const handleOnSubmit = async (e) => {
         e.preventDefault();
-        await postFormData({form});
-        console.log('form value on handle change --', form);
-        setForm( { name: '', notes: '', imageNotes: ''} );
-        fetchCases();
+        const errors = validate();
+        if (Object.keys(errors).length === 0) {
+            await postFormData({ form });
+            setForm({ name: '', notes: '', imageNotes: '' });
+            fetchCases();
+        } else {
+            showError(errors)
+        }
+
     }
 
 
@@ -73,7 +100,7 @@ function AddCase() {
                             id='casename'
                             value={form.name}
                             onChange={handleChange}
-                             />
+                        />
                     </div>
                     <label htmlFor='casenotes' className='col-sm-4 col-form-label text-right'>Case Notes</label>
                     <div className='col-sm-8 mb-2'>
@@ -85,7 +112,7 @@ function AddCase() {
                             placeholder='Case notes'
                             value={form.notes}
                             onChange={handleChange}
-                            ></textarea>
+                        ></textarea>
                     </div>
                     <label htmlFor='uploadImage' className='col-sm-4 col-form-label text-right'>Image</label>
                     <div className='col-sm-8 mb-2'>
@@ -114,9 +141,9 @@ function AddCase() {
                             name='imageNotes'
                             id='caseimagenotes'
                             placeholder='Image notes'
-                            value = {form.imageNotes}
+                            value={form.imageNotes}
                             onChange={handleChange}
-                            ></textarea>
+                        ></textarea>
                     </div>
                     <div className='row' style={{ width: '100%' }}>
                         <div className='col-sm-12 d-flex p-0'>

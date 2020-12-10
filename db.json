@@ -6,6 +6,12 @@
       "notes": "The Sentinel ensures errors don’t occur in your laboratory’s process. Cassette and container mismatch?  The Sentinel is constantly reading all labeling and will lock out and notify the user if a mismatch occurs. Tissue left in the container?  The Sentinel monitors all tissue before, during and after transfer from the container to the cassette ensuring no tissue is lost or left behind.",
       "image": "1",
       "imageNotes": "image notes 1"
+    },
+    {
+      "name": "Visualize your specimens",
+      "notes": "Print beautiful, full-color reports that provide the gross description, patient and clinician information and images of the container, container label and cassette.  The Sentinel provides the most robust record of specimens as they are received and moved through the grossing process.",
+      "imageNotes": "Tissue left in the container",
+      "id": "4phDU0Y"
     }
   ]
 }
