@@ -1,0 +1,17 @@
+{
+  "cases": [
+    {
+      "id": "1",
+      "name": "Case name 1",
+      "notes": "Case notes 1",
+      "image": "1",
+      "imageNotes": "image notes 1"
+    },
+    {
+      "name": "Case 2",
+      "notes": "Case 2notes",
+      "imageNotes": "Image 2 notes",
+      "id": "WVFLX_G"
+    }
+  ]
+}
