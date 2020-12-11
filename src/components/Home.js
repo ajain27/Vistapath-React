@@ -37,7 +37,7 @@ function Home() {
                                             <div className="col-sm-4 mt-3 mb-3">
                                                 <img src={cases.image} style={{ height: "200px" }} />
                                                 <div className="form-row m-auto">
-                                                    <label className="col-sm-4 col-form-label text-right p-0 pt-2" for="name">Case Id:</label>
+                                                    <label className="col-sm-4 col-form-label text-right p-0 pt-2" htmlFor="name">Case Id:</label>
                                                     <span className="col-sm-2"></span>
                                                     <label className="col-sm-6 p-0 pt-2 text-left">{cases.id}</label>
                                                 </div>

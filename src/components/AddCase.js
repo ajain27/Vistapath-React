@@ -8,22 +8,19 @@ Modal.setAppElement('#root');
 function AddCase() {
 
     const [isModalOpen, setisModalOpen] = useState(false);
-    const [cases, setCases] = useState(null);
+    // const [cases, setCases] = useState(null);
     const [uploadPercentage, setUploadPercentage] = useState(0);
     const [isUploading, setIsUploading] = useState(false);
     const [image, setImage] = useState(null);
     const [form, setForm] = useState({ name: '', notes: '', image: '', imageNotes: '' });
 
     const url = '/cases';
-    useEffect(() => {
-        fetchCases();
-    }, [])
 
-    const fetchCases = async () => {
-        const res = await fetch(url);
-        const data = await res.json();
-        setCases(data);
-    }
+    // const fetchCases = async () => {
+    //     const res = await fetch(url);
+    //     const data = await res.json();
+    //     setCases(data);
+    // }
 
     const validate = () => {
         let err = {}
@@ -114,7 +111,6 @@ function AddCase() {
         if (Object.keys(errors).length === 0) {
             await postFormData({ form });
             setForm({ name: '', notes: '', image: '', imageNotes: '' });
-            fetchCases();
         } else {
             showError(errors)
         }
@@ -183,7 +179,7 @@ function AddCase() {
                     <div className='row' style={{ width: '100%' }}>
                         <div className='col-sm-12 d-flex p-0'>
                             <button className='btn btn-outline-secondary float-right ml-auto mr-2' onClick={() => setisModalOpen(false)}>Close</button>
-                            <button className='btn btn-outline-secondary submitButton float-right' type='submit'>Submit</button>
+                            <button disabled={!form} className='btn btn-outline-secondary submitButton float-right' type='submit'>Submit</button>
                         </div>
                     </div>
                 </form>

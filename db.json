@@ -13,6 +13,13 @@
       "image": "https://firebasestorage.googleapis.com/v0/b/fir-react-fileupload.appspot.com/o/images%2Fdoctor.jpeg?alt=media&token=9f070e61-f762-42fa-8aa6-7c69008ce966",
       "imageNotes": "Doctor Notes",
       "id": 2
+    },
+    {
+      "name": "Organize and react",
+      "notes": "Easily see and react to changes in your workload.  View cases as they are imaged, approved or reassessed.\n\nThe Sentinel is the only platform that can allow labs to image specimens, generate gross reports and approve them remotely; shaving hours off your specimen turnaround time.",
+      "image": "https://firebasestorage.googleapis.com/v0/b/fir-react-fileupload.appspot.com/o/images%2Fchemicals.jpeg?alt=media&token=0e8d8add-09c8-41bd-88f9-1ef154060aaf",
+      "imageNotes": "Chemicals notes ",
+      "id": 3
     }
   ]
 }
