@@ -1,33 +1,33 @@
-
 .add-case {
-    width: 100% !important;
-    background-color: #dc5b28 !important;
-    color: white !important;
-    font-size: 25px !important;
-  }
-  
-  .add-case:hover {
-    background-color: #dc5b28 !important;
-    color: white !important;
-  }
-  .custom-file-input {
-    white-space: nowrap;
-  }
-  
-  .ReactModal__Overlay {
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
-    width: 50%;
-    margin: auto;
-    height: 70%;
+  width: 100% !important;
+  background-color: #dc5b28 !important;
+  color: white !important;
+  font-size: 25px !important;
 }
 
-.ReactModal__Overlay--after-open{
-    opacity: 1;
+.add-case:hover {
+  background-color: #dc5b28 !important;
+  color: white !important;
 }
 
-.ReactModal__Overlay--before-close{
-    opacity: 0;
+.custom-file-input {
+  white-space: nowrap;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  width: 50%;
+  margin: auto;
+  height: 70%;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
 }
 
 .addCaseHeading {
@@ -41,8 +41,14 @@
 
 .full-width {
   width: 100% !important;
+  /* color: #dc5b28; */
 }
-.file {
-  visibility: hidden;
-  position: absolute;
+
+.progress-custom {
+  width: 95% !important;
+  margin: auto;
+  margin-bottom: 10px;
 }
+.progress-bar {
+      background-color: #dc5b28 !important;
+    }

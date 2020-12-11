@@ -122,13 +122,13 @@ function AddCase() {
 
     return (
         <div className='container-fluid'>
-            <button className='btn btn-warning add-case m-0 p-0' onClick={() => setisModalOpen(true)}>Add Case</button>
+            <button className='btn btn-warning add-case m-0 p-0' onClick={() => setisModalOpen(true)}>ADD CASE</button>
             <Modal isOpen={isModalOpen}>
                 <h2 className='text-center addCaseHeading'>Add a new case</h2>
                 {
                     isUploading ?
                         <div className="row-flex d-flex full-width">
-                            <ProgressBar className="full-width" striped variant="success" now={uploadPercentage} label={`${uploadPercentage}%`} />
+                            <ProgressBar className="full-width progress-custom" striped variant="custom" now={uploadPercentage} label={`${uploadPercentage}%`} />
                         </div> : ''
                 }
 
