@@ -38,3 +38,11 @@
   color: white !important;
   background-color: #dc5b28 !important;
 }
+
+.full-width {
+  width: 100% !important;
+}
+.file {
+  visibility: hidden;
+  position: absolute;
+}

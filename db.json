@@ -1,25 +1,18 @@
 {
   "cases": [
     {
-      "id": "1",
       "name": "Eliminate mix-ups and errors",
-      "notes": "The Sentinel ensures errors don’t occur in your laboratory’s process. Cassette and container mismatch?  The Sentinel is constantly reading all labeling and will lock out and notify the user if a mismatch occurs. Tissue left in the container?  The Sentinel monitors all tissue before, during and after transfer from the container to the cassette ensuring no tissue is lost or left behind.",
-      "image": "1",
-      "imageNotes": "image notes 1"
+      "notes": "Cassette and container mismatch?  The Sentinel is constantly reading all labeling and will lock out and notify the user if a mismatch occurs",
+      "image": "https://firebasestorage.googleapis.com/v0/b/fir-react-fileupload.appspot.com/o/images%2Fchemicals.jpeg?alt=media&token=718dc102-dbff-4346-8edd-29e543b9e0ef",
+      "imageNotes": "he Sentinel monitors all tissue before, during and after transfer from the container to the cassette ensuring no tissue is lost or left behind",
+      "id": 1
     },
     {
-      "name": "Visualize your specimens",
-      "notes": "Print beautiful, full-color reports that provide the gross description, patient and clinician information and images of the container, container label and cassette.  The Sentinel provides the most robust record of specimens as they are received and moved through the grossing process.",
-      "image": "2",
-      "imageNotes": "Tissue left in the container",
-      "id": "4phDU0Y"
-    },
-    {
-      "name": "a",
-      "notes": "a",
-      "image": "https://firebasestorage.googleapis.com/v0/b/fir-react-fileupload.appspot.com/o/images%2FDriver%E2%80%99s%20license%20.jpeg?alt=media&token=42ea238a-e9b5-442b-ae4e-f0f4ee047fde",
-      "imageNotes": "a",
-      "id": "l98QJiL"
+      "name": "Ditch the ruler",
+      "notes": "The Sentinel will automatically locate, measure and image tissue as it’s placed into the cassette, all in under a second.  Measurements are more accurate and consistent than from technicians.",
+      "image": "https://firebasestorage.googleapis.com/v0/b/fir-react-fileupload.appspot.com/o/images%2Fdoctor.jpeg?alt=media&token=7263a1bf-2148-44c6-b015-51468b3b8756",
+      "imageNotes": "Doctor at work",
+      "id": 2
     }
   ]
 }

@@ -30,3 +30,8 @@
     right: 15px;
     bottom: 20px;
   }
+
+  label {
+    color: #dc5b28;
+    font-weight: 600;
+  }

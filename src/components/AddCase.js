@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal'
 import '../styles/addCase.css';
 import { storage } from '../firebase'
+import ProgressBar from 'react-bootstrap/ProgressBar'
 
 Modal.setAppElement('#root');
 function AddCase() {
 
     const [isModalOpen, setisModalOpen] = useState(false);
     const [cases, setCases] = useState(null);
+    const [uploadPercentage, setUploadPercentage] = useState(0);
+    const [isUploading, setIsUploading] = useState(false);
     const [image, setImage] = useState(null);
-    const [imageUrl, setimageUrl] = useState(null);
     const [form, setForm] = useState({ name: '', notes: '', image: '', imageNotes: '' });
 
     const url = '/cases';
@@ -54,32 +56,33 @@ function AddCase() {
     }
 
     function handleImageUploadChange(e) {
-        if(e.target.files[0]) {
-            setImage(e.target.files[0]);
-        }
-    }
-
-    function handleFileUpload(e) {
-        console.log('uploading file ...');
+        // if (e.target.files[0]) {
+        //     setImage(e.target.files[0]);
+        // }
         const uploadTask = storage.ref(`images/${image.name}`).put(image);
         uploadTask.on(
             "state_changed",
-            snapshot=> {},
+            snapshot => {
+                const progress = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                );
+                setUploadPercentage(progress);
+                setIsUploading(true);
+            },
             error => {
                 console.log(error)
             },
-            ()=> {
+            () => {
                 storage
-                .ref("images")
-                .child(image.name)
-                .getDownloadURL()
-                .then(url => {
-                    setimageUrl(url);
-                    setForm({
-                        ...form,
-                        image: url
+                    .ref("images")
+                    .child(image.name)
+                    .getDownloadURL()
+                    .then(url => {
+                        setForm({
+                            ...form,
+                            image: url
+                        })
                     })
-                })
             }
         )
     }
@@ -114,12 +117,18 @@ function AddCase() {
         }
     }
 
-
     return (
         <div className='container-fluid'>
             <button className='btn btn-warning add-case m-0 p-0' onClick={() => setisModalOpen(true)}>Add Case</button>
             <Modal isOpen={isModalOpen}>
                 <h2 className='text-center addCaseHeading'>Add a new case</h2>
+                {
+                    isUploading ?
+                        <div className="row-flex d-flex full-width">
+                            <ProgressBar className="full-width" striped variant="success" now={uploadPercentage} label={`${uploadPercentage}%`} />
+                        </div> : ''
+                }
+
                 <form className='form-group row' style={{ margin: 'auto' }} onSubmit={handleOnSubmit}>
                     <label htmlFor='casename' className='col-sm-4 col-form-label text-right'>Case Name</label>
                     <div className='col-sm-8 mb-2'>
@@ -150,10 +159,10 @@ function AddCase() {
                         <input
                             type='file'
                             name="image"
-                            // value={form.image}
-                            style={{ width: "80%" }}
+                            className="btn btn-outline-secondary"
                             onChange={handleImageUploadChange} />
-                        <button type="button" className="btn btn-outline-secondary submitButton " onClick={handleFileUpload}>Upload</button>
+                        {/* <button type="button" className="btn btn-outline-secondary submitButton">Upload</button> */}
+                        
                     </div>
                     <label htmlFor='caseimagenotes' className='col-sm-4 col-form-label text-right'>Image Notes</label>
                     <div className='col-sm-8 mb-2'>
