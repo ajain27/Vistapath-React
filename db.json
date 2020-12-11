@@ -2,17 +2,10 @@
   "cases": [
     {
       "name": "Eliminate mix-ups and errors",
-      "notes": "Cassette and container mismatch?  The Sentinel is constantly reading all labeling and will lock out and notify the user if a mismatch occurs",
-      "image": "https://firebasestorage.googleapis.com/v0/b/fir-react-fileupload.appspot.com/o/images%2Fchemicals.jpeg?alt=media&token=718dc102-dbff-4346-8edd-29e543b9e0ef",
-      "imageNotes": "he Sentinel monitors all tissue before, during and after transfer from the container to the cassette ensuring no tissue is lost or left behind",
+      "notes": "The Sentinel ensures errors don’t occur in your laboratory’s process.  \n\nCassette and container mismatch?  The Sentinel is constantly reading all labeling and will lock out and notify the user if a mismatch occurs.  \n\nTissue left in the container?  The Sentinel monitors all tissue before, during and after transfer from the container to the cassette ensuring no tissue is lost or left behind.",
+      "image": "https://firebasestorage.googleapis.com/v0/b/fir-react-fileupload.appspot.com/o/images%2Ftissue.jpg?alt=media&token=a23c0266-5e5e-4255-983c-3cd6b6266ae7",
+      "imageNotes": "Tissue Image Notes 1",
       "id": 1
-    },
-    {
-      "name": "Ditch the ruler",
-      "notes": "The Sentinel will automatically locate, measure and image tissue as it’s placed into the cassette, all in under a second.  Measurements are more accurate and consistent than from technicians.",
-      "image": "https://firebasestorage.googleapis.com/v0/b/fir-react-fileupload.appspot.com/o/images%2Fdoctor.jpeg?alt=media&token=7263a1bf-2148-44c6-b015-51468b3b8756",
-      "imageNotes": "Doctor at work",
-      "id": 2
     }
   ]
 }

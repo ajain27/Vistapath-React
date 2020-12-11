@@ -56,9 +56,12 @@ function AddCase() {
     }
 
     function handleImageUploadChange(e) {
-        // if (e.target.files[0]) {
-        //     setImage(e.target.files[0]);
-        // }
+        if (e.target.files[0]) {
+            setImage(e.target.files[0]);
+        }
+    }
+
+    function handleUploadImage() {
         const uploadTask = storage.ref(`images/${image.name}`).put(image);
         uploadTask.on(
             "state_changed",
@@ -159,10 +162,11 @@ function AddCase() {
                         <input
                             type='file'
                             name="image"
-                            className="btn btn-outline-secondary"
+                            style={{width: "80%"}}
+                            className="btn btn-outline-secondary mr-2"
                             onChange={handleImageUploadChange} />
-                        {/* <button type="button" className="btn btn-outline-secondary submitButton">Upload</button> */}
-                        
+                        <button type="button" className="btn btn-outline-secondary submitButton" onClick={handleUploadImage}>Upload</button>
+
                     </div>
                     <label htmlFor='caseimagenotes' className='col-sm-4 col-form-label text-right'>Image Notes</label>
                     <div className='col-sm-8 mb-2'>
