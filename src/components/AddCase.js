@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal'
 import '../styles/addCase.css';
 import { storage } from '../firebase'
@@ -30,6 +30,9 @@ function AddCase() {
         if (!form.notes) {
             err.notes = "Case notes is required"
         }
+        if (!form.image) {
+            err.notes = "Image is required"
+        }
         if (!form.imageNotes) {
             err.imageNotes = "Image notes is required"
         }
@@ -46,10 +49,11 @@ function AddCase() {
     }
 
     function handleChange(e) {
+        console.log('Form Data --', e.target.value);
         setForm({
             ...form,
             [e.target.name]: e.target.value
-        })
+        });
     }
 
     function handleImageUploadChange(e) {
@@ -63,9 +67,7 @@ function AddCase() {
         uploadTask.on(
             "state_changed",
             snapshot => {
-                const progress = Math.round(
-                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                );
+                const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
                 setUploadPercentage(progress);
                 setIsUploading(true);
             },
@@ -158,7 +160,7 @@ function AddCase() {
                         <input
                             type='file'
                             name="image"
-                            style={{width: "80%"}}
+                            style={{ width: "80%" }}
                             className="btn btn-outline-secondary mr-2"
                             onChange={handleImageUploadChange} />
                         <button type="button" className="btn btn-outline-secondary submitButton" onClick={handleUploadImage}>Upload</button>
