@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal'
-import '../styles/addCase.css'
-import { v4 as uuidv4 } from 'uuid';
+import '../styles/addCase.css';
+import { storage } from '../firebase'
 
 Modal.setAppElement('#root');
 function AddCase() {
 
     const [isModalOpen, setisModalOpen] = useState(false);
     const [cases, setCases] = useState(null);
-    const [form, setForm] = useState({ name: '', notes: '', imageNotes: '' });
+    const [image, setImage] = useState(null);
+    const [imageUrl, setimageUrl] = useState(null);
+    const [form, setForm] = useState({ name: '', notes: '', image: '', imageNotes: '' });
 
     const url = '/cases';
     useEffect(() => {
@@ -51,6 +53,37 @@ function AddCase() {
         })
     }
 
+    function handleImageUploadChange(e) {
+        if(e.target.files[0]) {
+            setImage(e.target.files[0]);
+        }
+    }
+
+    function handleFileUpload(e) {
+        console.log('uploading file ...');
+        const uploadTask = storage.ref(`images/${image.name}`).put(image);
+        uploadTask.on(
+            "state_changed",
+            snapshot=> {},
+            error => {
+                console.log(error)
+            },
+            ()=> {
+                storage
+                .ref("images")
+                .child(image.name)
+                .getDownloadURL()
+                .then(url => {
+                    setimageUrl(url);
+                    setForm({
+                        ...form,
+                        image: url
+                    })
+                })
+            }
+        )
+    }
+
     const handleCloseModal = () => {
         setisModalOpen(false);
         reloadPage();
@@ -74,7 +107,7 @@ function AddCase() {
         const errors = validate();
         if (Object.keys(errors).length === 0) {
             await postFormData({ form });
-            setForm({ name: '', notes: '', imageNotes: '' });
+            setForm({ name: '', notes: '', image: '', imageNotes: '' });
             fetchCases();
         } else {
             showError(errors)
@@ -113,23 +146,14 @@ function AddCase() {
                         ></textarea>
                     </div>
                     <label htmlFor='uploadImage' className='col-sm-4 col-form-label text-right'>Image</label>
-                    <div className='col-sm-8 mb-2'>
-                        <div className='input-group'>
-                            <div className='input-group-prepend'>
-                                <span className='input-group-text' id='uploadFile'>Upload</span>
-                            </div>
-                            <div className='custom-file'>
-                                <input
-                                    type='file'
-                                    className='custom-file-input'
-                                    id='uploadImage'
-                                    name='image'
-                                    value={form.image}
-                                    onChange={handleChange}
-                                    aria-describedby='uploadFile' />
-                                <label className='custom-file-label' htmlFor='uploadImage'>Choose image</label>
-                            </div>
-                        </div>
+                    <div className='col-sm-8 mb-2 d-flex'>
+                        <input
+                            type='file'
+                            name="image"
+                            // value={form.image}
+                            style={{ width: "80%" }}
+                            onChange={handleImageUploadChange} />
+                        <button type="button" className="btn btn-outline-secondary submitButton " onClick={handleFileUpload}>Upload</button>
                     </div>
                     <label htmlFor='caseimagenotes' className='col-sm-4 col-form-label text-right'>Image Notes</label>
                     <div className='col-sm-8 mb-2'>

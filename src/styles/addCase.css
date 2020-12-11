@@ -19,6 +19,7 @@
     transition: opacity 500ms ease-in-out;
     width: 50%;
     margin: auto;
+    height: 70%;
 }
 
 .ReactModal__Overlay--after-open{

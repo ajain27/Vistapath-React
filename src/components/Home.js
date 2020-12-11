@@ -35,7 +35,7 @@ function Home() {
                                     <li className="case" key={cases.id}>
                                         <div className="row m-3 row-item">
                                             <div className="col-sm-4 mt-3 mb-3">
-                                                <img src="https://picsum.photos/200" alt="" style={{ height: "200px" }} />
+                                                <img src={cases.image} alt="" style={{ height: "200px" }} />
                                                 <div className="d-flex row-flex mt-2">
                                                     <div className="col-sm-6 text-right">
                                                         <h6>Case Id:</h6>
