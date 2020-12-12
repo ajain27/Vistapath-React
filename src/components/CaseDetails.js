@@ -22,11 +22,11 @@ function CaseDetails({ match }) {
     }
 
     function handleApproveCase() {
-        approveStatus(caseDetails);
+        setApproveStatus(caseDetails);
         setCaseStatus('approved');
     }
 
-    const approveStatus = async (caseDetails) => {
+    const setApproveStatus = async (caseDetails) => {
         await fetch(caseByIdUrl, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },

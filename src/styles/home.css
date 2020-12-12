@@ -35,3 +35,10 @@
     color: #dc5b28;
     font-weight: 600;
   }
+
+  .statusBadge {
+    height: 20px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+  }
