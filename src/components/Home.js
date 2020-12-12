@@ -48,6 +48,7 @@ function Home() {
                                             </div>
                                             <div className="col-sm-8 mt-3 mb-3 text-left case-detail">
                                                 <h4>{cases.name}</h4>
+                                                <span className="badge badge-success">{cases.status}</span>
                                                 <div className="summary">
                                                     <p>{cases.notes}</p>
                                                     <p><strong>Image Notes:</strong> {cases.imageNotes}</p>

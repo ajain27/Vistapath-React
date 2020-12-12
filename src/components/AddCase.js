@@ -12,7 +12,7 @@ function AddCase() {
     const [uploadPercentage, setUploadPercentage] = useState(0);
     const [isUploading, setIsUploading] = useState(false);
     const [image, setImage] = useState(null);
-    const [form, setForm] = useState({ name: '', notes: '', image: '', imageNotes: '' });
+    const [form, setForm] = useState({ name: '', notes: '', image: '', imageNotes: '', status: '' });
 
     const url = '/cases';
 
@@ -90,7 +90,7 @@ function AddCase() {
 
     const handleCloseModal = () => {
         setisModalOpen(false);
-        reloadPage();
+        // reloadPage();
     }
 
     const reloadPage = () => {
