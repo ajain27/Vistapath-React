@@ -49,7 +49,6 @@ function AddCase() {
     }
 
     function handleChange(e) {
-        console.log('Form Data --', e.target.value);
         setForm({
             ...form,
             [e.target.name]: e.target.value

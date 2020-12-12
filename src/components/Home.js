@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../styles/home.css'
+import AddCase from './AddCase';
+import { Link } from 'react-router-dom'
 
 function Home() {
     const [caseList, setCaseList] = useState(null);
@@ -25,7 +27,9 @@ function Home() {
     }
 
     return (
+
         <div className="container-fluid">
+            <AddCase></AddCase>
             <div className="wrapper">
                 <div className="card individual-card">
                     <ul className="case-detail-ul">
@@ -50,7 +54,7 @@ function Home() {
                                                 </div>
                                             </div>
                                             <div className='col-sm-12 d-flex p-0'>
-                                                <button className='btn btn-outline-secondary ml-auto showDetailsBtn float-right' type='submit'>Show Details</button>
+                                                <Link className='btn btn-outline-secondary ml-auto showDetailsBtn float-right' type='submit' to={`/cases/${cases.id}`}>Show Details</Link>
                                             </div>
                                         </div>
                                     </li>
