@@ -6,7 +6,7 @@
       "image": "https://firebasestorage.googleapis.com/v0/b/fir-react-fileupload.appspot.com/o/images%2Ftissue.jpg?alt=media&token=a23c0266-5e5e-4255-983c-3cd6b6266ae7",
       "imageNotes": "Tissue Image Notes 1",
       "id": 1,
-      "status": "approved"
+      "status": "Approved"
     },
     {
       "name": "Visualize your specimens",
@@ -21,7 +21,7 @@
       "notes": "Easily see and react to changes in your workload.  View cases as they are imaged, approved or reassessed.\n\nThe Sentinel is the only platform that can allow labs to image specimens, generate gross reports and approve them remotely; shaving hours off your specimen turnaround time",
       "image": "https://firebasestorage.googleapis.com/v0/b/fir-react-fileupload.appspot.com/o/images%2Fchemicals.jpeg?alt=media&token=26f61504-726d-4f2e-8060-2cb7e9c73310",
       "imageNotes": "Chemicals Notes ",
-      "status": "approved",
+      "status": "Approved",
       "id": 3
     }
   ]
