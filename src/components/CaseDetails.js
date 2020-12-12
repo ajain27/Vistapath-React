@@ -38,7 +38,7 @@ function CaseDetails({ match }) {
                             <h4>{caseDetails.name}</h4>
                             <div className="summary">
                                 <p>{caseDetails.notes}</p>
-                                <p><strong>Image Notes:</strong> :{caseDetails.imageNotes}</p>
+                                <p><strong>Image Notes:</strong> {caseDetails.imageNotes}</p>
                             </div>
                         </div>
                         <div className='col-sm-12 d-flex p-0'>
