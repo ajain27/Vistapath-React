@@ -55,6 +55,7 @@ function CaseDetails({ match }) {
                                 <div className="summary">
                                     <p>{caseDetails.notes}</p>
                                     <p><strong>Image Notes:</strong> {caseDetails.imageNotes}</p>
+                                    <span className="badge badge-success statusBadge">{caseDetails.status}</span>
                                 </div>
                             </div>
                             {
