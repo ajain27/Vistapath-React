@@ -9,6 +9,7 @@ function Home() {
     const [isLoading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const url = '/cases';
+    const searchUrl = '/cases/';
     useEffect(() => {
         fetchCases();
     }, [])
