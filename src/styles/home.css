@@ -38,7 +38,7 @@
 
   .statusBadge {
     height: 20px;
-    position: relative;
-    top: 5px;
-    left: 10px;
+    position: relative !important;
+    top: 5px !important;
+    left: 10px !important;
   }

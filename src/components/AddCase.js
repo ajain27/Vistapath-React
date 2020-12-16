@@ -90,7 +90,7 @@ function AddCase() {
 
     const handleCloseModal = () => {
         setisModalOpen(false);
-        // reloadPage();
+        reloadPage();
     }
 
     const reloadPage = () => {
