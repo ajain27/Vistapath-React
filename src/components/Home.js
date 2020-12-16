@@ -52,7 +52,7 @@ function Home() {
                                                 <img src={cases.image} style={{ height: "200px" }} />
                                                 <div className="form-row m-auto">
                                                     <label className="col-sm-4 col-form-label text-right p-0 pt-2" htmlFor="name">Case Id:</label>
-                                                    <span className="col-sm-2"></span>
+                                                    {/* <span className="col-sm-2"></span> */}
                                                     <label className="col-sm-6 p-0 pt-2 text-left">{cases.id}</label>
                                                 </div>
                                             </div>
@@ -61,10 +61,9 @@ function Home() {
                                                     <h4>{cases.name}</h4>
                                                     <span className="badge badge-success statusBadge">{cases.status}</span>
                                                 </div>
-
                                                 <div className="summary">
                                                     <p>{cases.notes}</p>
-                                                    <p><strong>Image Notes:</strong> {cases.imageNotes}</p>
+                                                    <p><strong>Image Notes:</strong>{cases.imageNotes}</p>
                                                 </div>
                                             </div>
                                             <div className='col-sm-12 d-flex p-0'>

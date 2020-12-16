@@ -23,7 +23,6 @@ function CaseDetails({ match }) {
 
     function handleApproveCase() {
         setApproveStatus(caseDetails);
-        setCaseStatus('Approved');
     }
 
     const setApproveStatus = async (caseDetails) => {
@@ -41,7 +40,6 @@ function CaseDetails({ match }) {
                     caseDetails ?
                         <div className="row m-3 row-item">
                             <div className="col-sm-4 mt-3 mb-3">
-
                                 <img src={caseDetails.image} style={{ height: "200px" }} />
                                 <div className="form-row m-auto">
                                     <label className="col-sm-4 col-form-label text-right p-0 pt-2" htmlFor="name">Case Id:</label>
@@ -53,7 +51,7 @@ function CaseDetails({ match }) {
                                 <h4>{caseDetails.name}</h4>
                                 <div className="summary">
                                     <p>{caseDetails.notes}</p>
-                                    <p><strong>Image Notes:</strong> {caseDetails.imageNotes}</p>
+                                    <p><strong>Image Notes:</strong>{caseDetails.imageNotes}</p>
                                     <span className="badge badge-success statusBadge">{caseDetails.status}</span>
                                 </div>
                             </div>
@@ -66,7 +64,6 @@ function CaseDetails({ match }) {
                             }
                         </div> : ''
                 }
-
             </div>
         </div>
     )
