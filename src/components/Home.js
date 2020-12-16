@@ -24,7 +24,7 @@ function Home() {
             .catch(error => {
                 setLoading(false);
                 setCaseList([]);
-                setError('Something went wrong, cannot fetch the date');
+                setError('Something went wrong, cannot fetch the date ->', error);
             })
     }
     function handleSearch() {
