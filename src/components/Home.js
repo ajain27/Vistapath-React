@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import '../styles/home.css'
 import AddCase from './AddCase';
@@ -8,8 +8,9 @@ function Home() {
     const [caseList, setCaseList] = useState(null);
     const [isLoading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const inputEl = useRef(null);
+
     const url = '/cases';
-    const searchUrl = '/cases/';
     useEffect(() => {
         fetchCases();
     }, [])
@@ -26,16 +27,18 @@ function Home() {
                 setError('Something went wrong, cannot fetch the date');
             })
     }
-    function handleSearch(){
-        console.log('Searching...');
+    function handleSearch() {
+        const query = inputEl.current.value;
+        axios.get(`cases/?q=${query}`).then(res => {
+            setCaseList(res.data);
+        });
     }
 
     return (
-
         <div className="container-fluid">
             <AddCase></AddCase>
             <div className="md-form active-pink active-pink-2 mb-3 mt-0">
-                <input className="form-control m-auto search" type="text" placeholder="Search a case" onChange={handleSearch} aria-label="Search" />
+                <input className="form-control m-auto search" ref={inputEl} type="text" placeholder="Search a case" onChange={handleSearch} aria-label="Search" />
             </div>
             <div className="wrapper">
                 <div className="card individual-card">
