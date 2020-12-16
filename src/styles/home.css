@@ -42,3 +42,9 @@
     top: 5px !important;
     left: 10px !important;
   }
+
+.search {
+  width: 80% !important;
+  position: relative;
+  top: 20px;
+}

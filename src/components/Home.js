@@ -25,11 +25,17 @@ function Home() {
                 setError('Something went wrong, cannot fetch the date');
             })
     }
+    function handleSearch(){
+        console.log('Searching...');
+    }
 
     return (
 
         <div className="container-fluid">
             <AddCase></AddCase>
+            <div className="md-form active-pink active-pink-2 mb-3 mt-0">
+                <input className="form-control m-auto search" type="text" placeholder="Search a case" onChange={handleSearch} aria-label="Search" />
+            </div>
             <div className="wrapper">
                 <div className="card individual-card">
                     <ul className="case-detail-ul">
@@ -47,7 +53,7 @@ function Home() {
                                                 </div>
                                             </div>
                                             <div className="col-sm-8 mt-3 mb-3 text-left case-detail">
-                                                <div class="d-flex">
+                                                <div className="d-flex">
                                                     <h4>{cases.name}</h4>
                                                     <span className="badge badge-success statusBadge">{cases.status}</span>
                                                 </div>

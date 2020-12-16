@@ -37,7 +37,6 @@ function CaseDetails({ match }) {
     return (
         <div className="wrapper">
             <div className="card individual-card">
-
                 {
                     caseDetails ?
                         <div className="row m-3 row-item">
