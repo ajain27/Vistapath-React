@@ -29,7 +29,12 @@ function Home() {
     }
     function handleSearch() {
         const query = inputEl.current.value;
-        axios.get(`cases/?q=${query}`).then(res => {
+        return query;
+    }
+
+    const handleSearchClick = (searchTerm) => {
+        searchTerm = handleSearch();
+        axios.get(`cases/?q=${searchTerm}`).then(res => {
             setCaseList(res.data);
         });
     }
@@ -38,8 +43,10 @@ function Home() {
         <div className="container-fluid">
             <AddCase></AddCase>
             <div className="md-form active-pink active-pink-2 mb-3 mt-0">
-                <input className="form-control m-auto search" ref={inputEl} type="text" placeholder="Search a case" onChange={handleSearch} aria-label="Search" />
+                <input className="form-control m-auto search" ref={inputEl} type="text" placeholder="Search a case" onChange={handleSearch} aria-label="Search" />  
+                <button type="button" className='btn btn-outline-secondary ml-auto showDetailsBtn float-right' onClick={handleSearchClick}>Search</button>
             </div>
+          
             <div className="wrapper">
                 <div className="card individual-card">
                     <ul className="case-detail-ul">
@@ -52,7 +59,7 @@ function Home() {
                                                 <img src={cases.image} style={{ height: "200px" }} />
                                                 <div className="form-row m-auto">
                                                     <label className="col-sm-4 col-form-label text-right p-0 pt-2" htmlFor="name">Case Id:</label>
-                                                    {/* <span className="col-sm-2"></span> */}
+                                                    <span className="col-sm-2"></span>
                                                     <label className="col-sm-6 p-0 pt-2 text-left">{cases.id}</label>
                                                 </div>
                                             </div>

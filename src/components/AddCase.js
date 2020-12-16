@@ -8,19 +8,12 @@ Modal.setAppElement('#root');
 function AddCase() {
 
     const [isModalOpen, setisModalOpen] = useState(false);
-    // const [cases, setCases] = useState(null);
     const [uploadPercentage, setUploadPercentage] = useState(0);
     const [isUploading, setIsUploading] = useState(false);
     const [image, setImage] = useState(null);
     const [form, setForm] = useState({ name: '', notes: '', image: '', imageNotes: '', status: '' });
 
     const url = '/cases';
-
-    // const fetchCases = async () => {
-    //     const res = await fetch(url);
-    //     const data = await res.json();
-    //     setCases(data);
-    // }
 
     const validate = () => {
         let err = {}
