@@ -59,8 +59,8 @@ function Home() {
                                                 <img src={cases.image} style={{ height: "200px" }} />
                                                 <div className="form-row m-auto">
                                                     <label className="col-sm-4 col-form-label text-right p-0 pt-2" htmlFor="name">Case Id:</label>
-                                                    <span className="col-sm-2"></span>
-                                                    <label className="col-sm-6 p-0 pt-2 text-left">{cases.id}</label>
+                                                    <span className="col-sm-1"></span>
+                                                    <label className="col-sm-7 p-0 pt-2 text-left">{cases.id}</label>
                                                 </div>
                                             </div>
                                             <div className="col-sm-8 mt-3 mb-3 text-left case-detail">

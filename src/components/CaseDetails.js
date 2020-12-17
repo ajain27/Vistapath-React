@@ -7,7 +7,6 @@ function CaseDetails({ match }) {
 
     const caseByIdUrl = `/cases/${match.params.id}`;
     const [caseDetails, setCaseDetails] = useState(null);
-    const [caseStatus, setCaseStatus] = useState('');
 
     useEffect(() => {
         fetchDetails();
