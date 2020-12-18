@@ -1,11 +1,11 @@
-.add-case {
+.btn-add-case {
   width: 100% !important;
   background-color: #dc5b28 !important;
   color: white !important;
   font-size: 25px !important;
 }
 
-.add-case:hover {
+.btn-add-case:hover {
   background-color: #dc5b28 !important;
   color: white !important;
 }
@@ -41,7 +41,6 @@
 
 .full-width {
   width: 100% !important;
-  /* color: #dc5b28; */
 }
 
 .progress-custom {

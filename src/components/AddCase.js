@@ -7,7 +7,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 Modal.setAppElement('#root');
 function AddCase() {
 
-    const [isModalOpen, setisModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [uploadPercentage, setUploadPercentage] = useState(0);
     const [isUploading, setIsUploading] = useState(false);
     const [image, setImage] = useState(null);
@@ -82,7 +82,7 @@ function AddCase() {
     }
 
     const handleCloseModal = () => {
-        setisModalOpen(false);
+        setIsModalOpen(false);
         reloadPage();
     }
 
@@ -112,7 +112,7 @@ function AddCase() {
 
     return (
         <>
-            <button className='btn btn-warning add-case m-0 p-0' onClick={() => setisModalOpen(true)}>ADD CASE</button>
+            <button className='btn btn-warning btn-add-case m-0 p-0' onClick={() => setIsModalOpen(true)}>ADD CASE</button>
             <Modal isOpen={isModalOpen}>
                 <h2 className='text-center addCaseHeading'>Add a new case</h2>
                 {
@@ -172,7 +172,7 @@ function AddCase() {
                     </div>
                     <div className='row' style={{ width: '100%' }}>
                         <div className='col-sm-12 d-flex p-0'>
-                            <button className='btn btn-outline-secondary float-right ml-auto mr-2' onClick={() => setisModalOpen(false)}>Close</button>
+                            <button className='btn btn-outline-secondary float-right ml-auto mr-2' onClick={() => setIsModalOpen(false)}>Close</button>
                             <button disabled={!form} className='btn btn-outline-secondary submitButton float-right' type='submit'>Submit</button>
                         </div>
                     </div>
