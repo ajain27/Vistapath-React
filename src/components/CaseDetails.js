@@ -59,7 +59,7 @@ function CaseDetails({ match }) {
                                     <div className='col-sm-12 d-flex p-0'>
                                         <button className='btn btn-outline-danger ml-auto actionBtn float-right mr-2' type='button'>Reject</button>
                                         <button className='btn btn-outline-success actionBtn float-right' type='button' name="approve" onClick={handleApproveCase}>Approve</button>
-                                    </div> : <Link type="button" className="btn btn-link ml-auto goBack" to={'/'}>Go back</Link>
+                                    </div> : <Link type="button" className="btn btn-link ml-auto goBackLink" to={'/'}>Go back</Link>
                             }
                         </div> : ''
                 }

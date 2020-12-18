@@ -2,27 +2,32 @@ import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import '../styles/home.css'
 import AddCase from './AddCase';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { ClipLoader } from "react-spinners";
 
 function Home() {
     const [caseList, setCaseList] = useState(null);
-    const [isLoading, setLoading] = useState(false);
+    const [showLoader, setShowLoader] = useState(true);
     const [error, setError] = useState('');
     const inputEl = useRef(null);
 
     const url = '/cases';
     useEffect(() => {
-        fetchCases();
+        setTimeout(() => {
+            fetchCases();
+        }, 1000)
     }, [])
 
     const fetchCases = () => {
         axios.get(url).then((res) => {
-            setLoading(true);
+            setShowLoader(true);
+            console.log(showLoader);
             setCaseList(res.data);
-            setLoading(false);
+            setShowLoader(false);
+            console.log(showLoader);
         })
             .catch(error => {
-                setLoading(false);
+                setShowLoader(false);
                 setCaseList([]);
                 setError('Something went wrong, cannot fetch the date ->', error);
             })
@@ -43,16 +48,15 @@ function Home() {
         <div className="container-fluid">
             <AddCase></AddCase>
             <div className="md-form active-pink active-pink-2 mb-3 mt-0">
-                <input className="form-control m-auto search" ref={inputEl} type="text" placeholder="Search a case" onChange={handleSearch} aria-label="Search" />  
+                <input className="form-control m-auto search" ref={inputEl} type="text" placeholder="Search a case" onChange={handleSearch} aria-label="Search" />
                 <button type="button" className='btn btn-outline-secondary ml-auto showDetailsBtn float-right' onClick={handleSearchClick}>Search</button>
             </div>
-          
             <div className="wrapper">
                 <div className="card individual-card">
                     <ul className="case-detail-ul">
                         {
-                            isLoading ? 'Loading ... ' :
-                                caseList?.map(cases =>
+                            showLoader ? <ClipLoader size={100} color="#dc5b28" className="mt-2" /> :
+                                caseList && caseList?.map(cases =>
                                     <li className="case" key={cases.id}>
                                         <div className="row m-3 row-item">
                                             <div className="col-sm-4 mt-3 mb-3">
