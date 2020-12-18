@@ -111,7 +111,7 @@ function AddCase() {
     }
 
     return (
-        <div className='container-fluid'>
+        <>
             <button className='btn btn-warning add-case m-0 p-0' onClick={() => setisModalOpen(true)}>ADD CASE</button>
             <Modal isOpen={isModalOpen}>
                 <h2 className='text-center addCaseHeading'>Add a new case</h2>
@@ -178,7 +178,7 @@ function AddCase() {
                     </div>
                 </form>
             </Modal>
-        </div>
+        </>
     )
 }
 
