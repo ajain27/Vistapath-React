@@ -21,10 +21,8 @@ function Home() {
     const fetchCases = () => {
         axios.get(url).then((res) => {
             setShowLoader(true);
-            console.log(showLoader);
             setCaseList(res.data);
             setShowLoader(false);
-            console.log(showLoader);
         })
             .catch(error => {
                 setShowLoader(false);
