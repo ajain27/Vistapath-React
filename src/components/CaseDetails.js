@@ -17,7 +17,7 @@ function CaseDetails({ match }) {
             setCaseDetails(data);
         };
         fetchDetails();
-    }, [match.params.id])
+    }, [match.params.id, caseByIdUrl])
 
 
     function handleApproveCase() {
