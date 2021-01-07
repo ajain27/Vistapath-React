@@ -8,10 +8,6 @@ function CaseDetails({ match }) {
     const caseByIdUrl = `/cases/${match.params.id}`;
     const [caseDetails, setCaseDetails] = useState(null);
 
-    useEffect(() => {
-        fetchDetails();
-    },[match.params.id])
-
     const fetchDetails = async () => {
         const data = await axios.get(caseByIdUrl).then(res => {
             const details = res.data;
@@ -19,7 +15,8 @@ function CaseDetails({ match }) {
         })
         setCaseDetails(data);
     }
-
+    useEffect(fetchDetails,[match.params.id])
+    
     function handleApproveCase() {
         setApproveStatus(caseDetails);
     }
