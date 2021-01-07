@@ -8,7 +8,6 @@ import { ClipLoader } from "react-spinners";
 function Home() {
     const [caseList, setCaseList] = useState(null);
     const [showLoader, setShowLoader] = useState(true);
-    // const [error, setError] = useState('');
     const inputEl = useRef(null);
 
     const url = '/cases';
@@ -28,7 +27,6 @@ function Home() {
                 setShowLoader(false);
                 setCaseList([]);
                 console.log(error);
-                // setError('Something went wrong, cannot fetch the date ->', error);
             })
     }
     function handleSearch() {
