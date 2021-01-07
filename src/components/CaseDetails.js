@@ -10,7 +10,7 @@ function CaseDetails({ match }) {
 
     useEffect(() => {
         fetchDetails();
-    }, [match.params.id])
+    },[match.params.id])
 
     const fetchDetails = async () => {
         const data = await axios.get(caseByIdUrl).then(res => {
