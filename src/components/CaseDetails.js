@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import "../styles/caseDetails.css"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function CaseDetails({ match }) {
 
     const caseByIdUrl = `/cases/${match.params.id}`;
     const [caseDetails, setCaseDetails] = useState(null);
 
-    const fetchDetails = async () => {
-        const data = await axios.get(caseByIdUrl).then(res => {
-            const details = res.data;
-            return details;
-        })
-        setCaseDetails(data);
-    }
-    useEffect(fetchDetails,[match.params.id])
-    
+    useEffect(() => {
+        const fetchDetails = async () => {
+            const data = await axios.get(caseByIdUrl).then(res => {
+                const details = res.data;
+                return details;
+            })
+            setCaseDetails(data);
+        };
+        fetchDetails();
+    }, [match.params.id])
+
+
     function handleApproveCase() {
         setApproveStatus(caseDetails);
     }
