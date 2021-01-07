@@ -57,7 +57,7 @@ function Home() {
                                     <li className="case" key={cases.id}>
                                         <div className="row m-3 row-item">
                                             <div className="col-sm-4 mt-3 mb-3">
-                                                <img src={cases.image} style={{ height: "200px" }} alt="home-image"/>
+                                                <img src={cases.image} style={{ height: "200px" }} alt="home-pic"/>
                                                 <div className="form-row m-auto">
                                                     <label className="col-sm-4 col-form-label text-right p-0 pt-2" htmlFor="name">Case Id:</label>
                                                     <span className="col-sm-1"></span>
